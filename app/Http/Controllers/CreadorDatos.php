@@ -21,6 +21,12 @@ class CreadorDatos extends Controller
         return $res;
     }
 
+    public function calculador($res){
+        $actual = $actual * $res;
+    }
+
+
+
 
 //     /**
 //      * Display a listing of the resource.

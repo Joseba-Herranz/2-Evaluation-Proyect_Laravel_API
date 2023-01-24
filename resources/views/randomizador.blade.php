@@ -1,4 +1,4 @@
 
-<form method="POST" action="{{ route('randomizador') }}">
+<form method="POST" action="{{ route('CreadorDatos@randomizador') }}">
 <button value="submit">Random</button>
 </form>
