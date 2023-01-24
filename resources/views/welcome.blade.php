@@ -128,5 +128,6 @@
                 </div>
             </div>
         </div>
+        <button><a href="{{ route('randomizador') }}">Random</a></button>
     </body>
 </html>
