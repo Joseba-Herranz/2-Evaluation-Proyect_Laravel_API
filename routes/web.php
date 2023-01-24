@@ -18,4 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('randomizador',[CreadorDatos::class,'randomizador'])->name('randomizador');
+Route::get('/rand', function () {
+    return view('randomizador');
+});
+
+Route::post('randomizador', 'CreadorDatosController@randomizador');
+// Route::get('randomizador',[CreadorDatos::class,'randomizador'])->name('randomizador');
