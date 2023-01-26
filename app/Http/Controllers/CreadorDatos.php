@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class CreadorDatos extends Controller
 {
-
     public function randomizador()
     {
         $random = mt_rand(1, 2);
@@ -22,9 +21,15 @@ class CreadorDatos extends Controller
         return $res;
     }
 
-    public function calculador($res)
+    public function calculador($res, $actual)
     {
-        $actual = $actual * $res;
+        $bajada = $actual * $res;
+        
+        if($res>0){
+            $actual = $bajada + $res;
+        }elseif($res<0){
+            $actual = $bajada - $res;
+        }
+        return $actual;
     }
-
 }

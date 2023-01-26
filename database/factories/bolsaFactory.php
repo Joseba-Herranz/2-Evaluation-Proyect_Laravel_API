@@ -21,7 +21,7 @@ class bolsaFactory extends Factory
             "nombre" => 'BBVA',
             "valor" => $this->faker->valor(),
             "variacion" => $this->faker->variacion(),
-         ];
+        ];
     }
 }
 // https://techtoolindia.com/how-to-insert-bulk-fake-data-in-laravel-9-using-factory-seeder
