@@ -26,6 +26,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
-
 Route::get('random', 'CreadorDatosController@generarNumero')->name('random');
 // Route::get('randomizador',[CreadorDatos::class,'randomizador'])->name('randomizador');
+
+//https://laravel.com/docs/9.x/eloquent-resources#adding-meta-data
