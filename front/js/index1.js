@@ -43,47 +43,58 @@ $(function () {
             
             guardados[x] = ui.draggable.attr('id');
             imagesId.push(ui.draggable.attr('id'));
-
-            localStorage.setItem("imagesId", JSON.stringify(imagesId));
+            console.log(ui.draggable.attr('alt'));
+            localStorage.setItem(ui.draggable.attr('id'), true);
+            console.log(localStorage.getItem(ui.draggable.attr('id')));
             x++;
-            guardado();
+            
         }
+    });
+
+    $("#save").click(function(){
+        $(".arriba").css("display","none");
+        $(".abajo").css("display", "block");
+    });
+
+    $("#modificar").click(function(){
+        $(".arriba").css("display","block");
+        $(".abajo").css("display", "none");
     });
 
     ////////////
 
-    $("#inicio img").droppable({
-        revert: "invalid",
-        refreshPositions: true,
-        drop: function (event, ui) {
-            ui.helper.addClass("draggable");
-        },
-        stop: function (event, ui) {
-            ui.helper.removeClass("draggable");
-            var image = this.src.split("/")[this.src.split("/").length - 1];
+    // $("#inicio img").droppable({
+    //     revert: "invalid",
+    //     refreshPositions: true,
+    //     drop: function (event, ui) {
+    //         ui.helper.addClass("draggable");
+    //     },
+    //     stop: function (event, ui) {
+    //         ui.helper.removeClass("draggable");
+    //         var image = this.src.split("/")[this.src.split("/").length - 1];
 
-        }
-    });
+    //     }
+    // });
 
-    var x=0;
+    // var x=0;
 
-    $("#fin").draggable({
-        drag: function (event, ui) {
-            if ($("#fin img").length == 0) {
-                $("#fin").html("");
-            }
-            // console.log(ui.draggable.attr('id'));
-            ui.draggable.addClass("dropped");
-            $("#fin").append(ui.draggable);
+    // $("#fin").draggable({
+    //     drag: function (event, ui) {
+    //         if ($("#fin img").length == 0) {
+    //             $("#fin").html("");
+    //         }
+    //         // console.log(ui.draggable.attr('id'));
+    //         ui.draggable.addClass("dropped");
+    //         $("#fin").append(ui.draggable);
             
-            guardados[x] = ui.draggable.attr('id');
-            imagesId.push(ui.draggable.attr('id'));
+    //         guardados[x] = ui.draggable.attr('id');
+    //         imagesId.push(ui.draggable.attr('id'));
 
-            localStorage.setItem("imagesId", JSON.stringify(imagesId));
-            x++;
-            guardado();
-        }
-    });
+    //         localStorage.setItem("imagesId", JSON.stringify(imagesId));
+    //         x++;
+    //         guardado();
+    //     }
+    // });
 
     // $('#borrar').click(function(){
     //     location.reload();
@@ -144,6 +155,16 @@ function getValor(){
     
 }
 
+function vistaPrev(){
+    for(var x=0; x<10; x++){
+        if(localStorage.getItem(x)!=null){
+            console.log(localStorage.getItem(x));
+            document.getElementById(x).style.display = "none";
+            document.getElementById('fin').innerHTML += show[x];
+
+        }
+    }
+}
 
 // function grafico(){
 //         var ctx = document.getElementById("myChart").getContext("2d");

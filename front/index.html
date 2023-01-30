@@ -12,35 +12,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <script src="js/index1.js"></script>
 </head>
-<body>
+<body onload="vistaPrev()">
     <div id="cabecera"><img id="ibex35" src="img/ibex35.png" alt="Ibex 35"></div>
     <br>
     <br>
-    <h2><strong>Seleccion de empresas</strong></h2>
-    <div id="inicio">
-        <img id="0" src="img/bbva.png" alt="BBVA" ondblclick="remover(0)" >
-        <img id="1" src="img/caixa.png" alt="Caixa" ondblclick="remover(1)">
-        <img id="2" src="img/cellnex.png" alt="Cellnex" ondblclick="remover(2)">
-        <img id="3" src="img/ferrovial.png" alt="Ferrovial" ondblclick="remover(3)">
-        <img id="4" src="img/iberdrola.png" alt="Iberdrola" ondblclick="remover(4)">
-        <img id="5" src="img/inditex.png" alt="Inditex" ondblclick="remover(5)">
-        <img id="6" src="img/naturgy.png" alt="Naturgy" ondblclick="remover(6)">
-        <img id="7" src="img/repsol.png" alt="Repsol" ondblclick="remover(7)">
-        <img id="8" src="img/santander.png" alt="Santander" ondblclick="remover(8)">
-        <img id="9" src="img/telefonica.png" alt="Telefonica" ondblclick="remover(9)">
+    <div class="arriba">
+        <h2><strong>Seleccion de empresas</strong></h2>
+        <div id="inicio">
+            <img id="0" src="img/bbva.png" alt="BBVA" ondblclick="remover(0)" >
+            <img id="1" src="img/caixa.png" alt="Caixa" ondblclick="remover(1)">
+            <img id="2" src="img/cellnex.png" alt="Cellnex" ondblclick="remover(2)">
+            <img id="3" src="img/ferrovial.png" alt="Ferrovial" ondblclick="remover(3)">
+            <img id="4" src="img/iberdrola.png" alt="Iberdrola" ondblclick="remover(4)">
+            <img id="5" src="img/inditex.png" alt="Inditex" ondblclick="remover(5)">
+            <img id="6" src="img/naturgy.png" alt="Naturgy" ondblclick="remover(6)">
+            <img id="7" src="img/repsol.png" alt="Repsol" ondblclick="remover(7)">
+            <img id="8" src="img/santander.png" alt="Santander" ondblclick="remover(8)">
+            <img id="9" src="img/telefonica.png" alt="Telefonica" ondblclick="remover(9)">
+        </div>
+        <br>
+        <h2><strong>Introduzca aqui las que desee mostrar</strong></h2>
+        <div id="fin">
+            
+        </div>
+        <button id="save" class="arriba" onclick="guardado()">Guardar</button>
+    <!-- <button id="borrar" >Delete</button> -->
     </div>
     <br>
-    <h2><strong>Introduzca aqui las que desee mostrar</strong></h2>
-    <div id="fin">
-        
-    </div>
-<!-- 
-    <button id="borrar" >Delete</button> -->
     <br>
     <br>
-    <br>
-    <div id="mostrar"> 
-        
+    <div class="abajo">
+        <div id="mostrar"> 
+            <button id="modificar" class="abajo" style="display: none;">Opciones</button>
+        </div>
     </div>
 </body>
 </html>
