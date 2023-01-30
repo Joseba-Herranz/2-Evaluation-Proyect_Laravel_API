@@ -44,7 +44,7 @@ $(function () {
             guardados[x] = ui.draggable.attr('id');
             imagesId.push(ui.draggable.attr('id'));
             console.log(ui.draggable.attr('alt'));
-            localStorage.setItem(ui.draggable.attr('id'), true);
+            localStorage.setItem(ui.draggable.attr('id'), ui.draggable.attr('id'));
             console.log(localStorage.getItem(ui.draggable.attr('id')));
             x++;
             
@@ -112,24 +112,25 @@ $(function () {
 // }
 
 function guardado(){
-    console.log(guardados);
     const mostrar = document.getElementById('mostrar');
     var toShow = "<style>#mostrar.img{ width: 200%;} </style>"
     toShow += "<button>Seleccionar otra vez</button>" + "<br>";
     
-    for(let x=0; x<guardados.length; x++){
-        toShow += `<div id='div${guardados[x]}'>`;
-        if((x%2)==0){
-            toShow += `<div id='div${guardados[x]}'>`;
-            toShow += show[guardados[x]] + `<p id='valor${guardados[x]}'>Valor actual</p>`;
-            // toShow += '<canvas id="myChart"></canvas>';
-            toShow += `</div>` + "<br>";
-        }else{
-            toShow += `<div id='div${guardados[x]}'>`;
-            toShow += show[guardados[x]] + `<p id='valor${guardados[x]}'>Valor actual</p>`;
-            toShow += `</div>`;
+    for(let x=0; x<10; x++){
+        if(localStorage.getItem(x)!=null){
+            toShow += `<div id='div${localStorage.getItem(x)}'>`;
+            console.log(localStorage.getItem(x));
+            if((x%2)==0){
+                toShow += `<div id='div${localStorage.getItem(x)}'>`;
+                toShow += show[localStorage.getItem(x)] + `<p id='valor${localStorage.getItem(x)}'>Valor actual</p>`;
+                // toShow += '<canvas id="myChart"></canvas>';
+                toShow += `</div>` + "<br>";
+            }else{
+                toShow += `<div id='div${guardados[x]}'>`;
+                toShow += show[localStorage.getItem(x)] + `<p id='valor${localStorage.getItem(x)}'>Valor actual</p>`;
+                toShow += `</div>`;
+            }
         }
-        
     }
 
     mostrar.innerHTML = toShow;
